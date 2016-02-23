@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>JRCharney.Github.io</title>
+  <style type="text/css">
+  
+  </style>
+  <script type="text/javascript">
+  
+  </script>
+ </head>
+ <body>
+  <!-- start of everything -->
+  <div id="everything">
+   <!-- start of header -->
+   <div id="header">
+	<div id="cover">
+     <h1>JRCharney.Github.io</h1>
+	 <h2>The new <em>temporary</em> website of Jason Charney</h2>
+	</div>
+	<div id="nav">
+	 <!-- unordered list of links aligned to go to pages on this site -->
+	 <ul>
+	 	<li><a href="./hacktop/" title="The reason you are here!">Hacktop</a></li>
+	 </ul>
+	</div>
+   </div>
+   <!-- end of header -->
+   <!-- start of content -->
+   <div id="content">
+	<!-- start of side contents, if requested -->
+    <div id="side">
+	 <!-- start of Twitter widget -->
+	 <div id="twitter" class="widget">
+	 <h3><a href="https://twitter.com/JRCharney">@JRCharney</a></h3>
+		 <!--embed twitter widget -->
+		 <!-- TODO: Add twitter logo, linkedin logo, and github log -->
+	 </div>
+	 <!-- end of Twitter widget -->
+	 <!-- start of gallery widget, not sure if I should or can let instagram or imgur handle this. -->
+	 <div id="gallery" class="widget">
+	  <h3><a href="./gallery.html">Gallery</a></h3>
+	  <!-- photo carousel -->
+	  <!-- links to screenshots or physical objects -->
+	 </div>
+	 <!-- end of gallery widget -->
+	 <!-- start of project pages list, list of pages correpsonding to project repos on my Github-->
+	 <div id="repos" class="widget">
+	  <h3><a href="./repos.html">Repos</a></h3>
+	  <!-- unordered list -->
+	 </div>
+	 <!-- end of repo list -->
+	 <!-- start of search widget, searches the blog -->
+	 <div id="search" class="widget">
+	  <h3>Search</h3>
+	  <form>
+	   <input type="text" name="q" value="">
+	   <input type="submit" name="search" value="Search">
+	   <input type="checkbox" name="where" value="blog" checked>Blog posts
+	   <input type="checkbox" name="where" value="repos">Repo pages
+	  </form>
+	 </div>
+	 <!-- end of search widget -->
+     <!-- start of calendar widget, highlights the days where posts were made-->
+	 <div id="calendar" class="widget">
+	  <h3>Posts by Date</h3>
+	  <div class="cal">
+	   <!-- probably some PHP wizardry -->
+	  </div>
+	  <!-- a href="./search.php?q=YYYY[MM[DD[hhmm]]]&how=cal&where=blog" -->
+	  <!-- the less detailed, the more broader the range -->
+	  <!-- TODO: What about ranges? -->
+	  <input type="checkbox" name="range" value="range"> Check for a range
+	  <div class="cal,hidden">
+		<!-- definitely let PHP handle this...or javascript -->
+	  </div>
+	 </div>
+	 <!-- end of calendar widget -->
+	 <!-- start of tag list, show a list of tags created -->
+	 <div id="taglist" class="widget">
+	 <h3>#Tags</h3>
+	 <!-- add a search form that filters the list -->
+	 <!-- unordered list, change the bullet to an octothorpe -->
+	 <!-- a href="./search.php?q=tag+name&how=tags&where=blog" -->
+	 </div>
+	 <!-- end of tag list -->
+	</div>
+	<!-- end of side contents -->
+	<!-- start of main contents -->
+	<div id="main">
+	 <!-- load the blog widget -->
+	 <div id="blog">
+	  <!-- load the query result of a blog filter or search or article, default is what is recent -->
+	  <div id="articles">
+	   <!-- start of an article fetched from the database -->
+	   <div class="article">
+		<div class="atitle"><h3>A new start</h3></div>
+		<div class="timestamp">February 23, 2016</div>
+		<div class="post">
+		 <p>Just about everything is in the <a href="https://github.com/jrcharney/hacktop/wiki/">Wiki</a>.  Go there until I can sort this all out.</p>
+		</div>
+		<div class="tags">Tags go here, someday.</div>
+	   </div>
+	   <!-- end of an article fetched from the database -->
+	  </div>
+	  <!-- end of partial search -->
+	  <!-- pager for more than one result -->
+	  <div id="pager">Page x or y</div>
+	 </div>
+	 <!-- end of blog widget -->
+	</div>
+	<!-- end of main content -->
+   </div>
+   <!-- end of content -->
+   <!-- a clear spacer div might need to go between the footer and content section if two column format is used -->
+   <div class="clear"></div>
+   <!-- start of footer -->
+   <div id="footer"></div>
+   <!-- end of footer -->
+  </div>
+  <!-- end of everything -->
+ </body>
+</html>
