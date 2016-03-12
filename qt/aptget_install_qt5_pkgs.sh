@@ -31,4 +31,4 @@ sudo apt-get install libfontconfig1-dev libdbus-1-dev libfreetype6-dev libudev-d
 		     libiodbc2 libkadm5clnt-mit9 libkadm5srv-mit9 libkdb5-7 libmail-sendmail-perl \
 		     libmpcdec6 libmysqlclient18 libpcre3-dev libpcrecpp0 libpq5 libpulse-mainloop-glib0 \
 		     libslv2-9 libsqlite0 libsybdb5 libsys-hostname-long-perl libunistring0 libxml2-dev \
-		     libzvbi-common libzvbi0 mysql-common po-debconf
+		     libzvbi-common libzvbi0 mysql-common po-debconf libts-dev
