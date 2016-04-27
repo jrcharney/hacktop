@@ -4,7 +4,7 @@ Everything Hacktops
 ## Welcome to Hacktop
 The Hacktop project is basically a reconsolidation of several previous Github projects that I've done in the past only all the content is reigned in to one project.
 
-Most of the information can be found in [this projet's wiki](https://github.com/jrcharney/hacktop/wiki)
+Most of the information can be found in [this project's wiki](https://github.com/jrcharney/hacktop/wiki)
 
 In this project we talk about how to build a Raspberry Pi Hacktop which the application can be applied to single board computers (SBCs) like Raspberry Pis and Odroids.  This information is not limited to those kinds of SBCs.
 
@@ -52,3 +52,8 @@ The Raspberry Pi for the average user is designed to be a learning computer.  It
 For the task specific things, or if you are looking for something cheap to hack that won't ruin your nice computer where you do everything else, the Pi is great for trying out new stuff.  Basically, for the kids, it is a playpen. For the adults, it's a proving grounds or a test dummy.
 
 Whatever you plan to use it for, if you plan on using it with a hacktop interface, this is the GitHub to follow.
+
+## NOTES
+
+* In the `/scripts/` folder, `mt.sh`  will not run until after you've commented out the `warning` line which advises you to check to make sure that the path t a possible thumbdrive is not the path to your harddrive.
+* My `.vimrc` file has been moved to `/dotfiles/`.  If you want a simple Vim configuration, just stick that into your home directory.  If you are using something like Vundle or Pathogen, you might not want to use it.  It is however a good file to use to set up vim settings when you need to use Vim as root.

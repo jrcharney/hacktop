@@ -18,7 +18,7 @@ ubuntu	  - Mount an Ubuntu System
 sd or usb - Mount a SD (using a USB adapter) or USB device.
             These may use exFAT for cards or thumbdrives 32GB on up.
 unmount   - Unmount a filesystem
-help     - This message
+help      - This message
 
 For extended help, please read the article in my Hacktop Wiki title "Mount a Hard Drive"
 https://github.com/jrcharney/hacktop/wiki/Mount-a-Hard-Drive.md
@@ -51,6 +51,8 @@ EOF
  exit 1
 }
 
+warning # COMMENT OUT THIS LINE once you have set up this script!
+
 # Device paths. Modify them if they are different 
 # from what `sudo fdisk -l` may have.
 fedora="/dev/mapper/VolGroup-LogVol00"
@@ -60,10 +62,9 @@ thumbdrive="/dev/sda1"	# EDIT THIS LINE! READ THE warning() AS TO WHY YOU MUST D
 
 [ $# -eq 0 ] && usage
 
-warning() # COMMENT OUT THIS LINE once you have set up this script!
-
 case $1 in
 	-l|find|list)
+		# Note: Another command of interst is 'df -h', but it doesn't show unmounted devices or partitions.
 		sudo fdisk -l
 		;;
 	fedora)
@@ -87,7 +88,7 @@ case $1 in
 		exit 1
 		;;
 	-h|--help|help)
-		usage()
+		usage
 		;;
 	*)
 		printf "ERROR: Invalid command '%s'. Use 'help' for usage\n" $1
