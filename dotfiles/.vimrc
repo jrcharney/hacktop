@@ -22,3 +22,5 @@ set sc                      " Show partial commands
 set noincsearch             " Do not search as you time. (Learn RegEx, it is better.)
 set noexpandtab             " Do not expand tabs into spaces
 set backspace=indent,eol,start  " Have backspace work like in most other applications
+set ruler		" show the position of the cursor in the status line
+" TODO Look into 'set rulerformat'
