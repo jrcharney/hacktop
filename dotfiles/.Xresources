@@ -1,0 +1,235 @@
+! ~/.Xresources file controls thing like the appearance of urxvt
+! NOTE: DO NOT use apostrophies in this file.
+! TODO: Break this up into smaller parts and putt the smaller parts in ~/.Xresources.d/
+! TODO: Should I put ~/.Xresources at ~/.config/Xresources instead? (Probably, if not for conveinence.)
+! TODO: If so, consider putting ~/.Xresources.d/ at ~/.config/Xresources.d/
+! TODO: Consider the possible differences between urxvt and xterm.
+
+! Let us also apply some settings for XTerm, especially if we use w3m
+
+! Set the terminal for urxvt
+! TODO: What about tabs?
+! TODO: xterm also supports 256 colors.
+URxvt*termName: rxvt-unicode-256color
+
+! Fix the Home and End keys in URXVT and RXVT
+! NOTE: Do this before setting the colors.
+URxvt*keysym.Home: \033[1~
+URxvt*keysym.End:  \033[4~
+
+! Do not blink when we hit something
+URxvt*visualBell: false
+
+! TODO: You may want to consider putting this part in another file.
+! Default Terminal Colors (basically your standard terminal colors)
+! These are the colors you should use if you are using IRSSI or Weechat
+! NOTE: Do not define the background color like this as it will screw up the appearance when black needs to appear on white.
+! 	#define term_background		[30]#000000
+
+#define term_background		#000000
+#define term_foreground		#dfdfdf
+
+#define term_dark_black		#000000
+#define term_dark_red		#cd0000
+#define term_dark_green		#00cd00
+#define term_dark_yellow	#cdcd00
+#define term_dark_blue		#0000cd
+#define term_dark_magenta	#cd00cd
+#define term_dark_cyan		#00cdcd
+#define term_dark_white		#efefef
+#define term_light_black	#4d4d4d
+#define term_light_red		#ff0000
+#define term_light_green	#00ff00
+#define term_light_yellow	#ffff00
+#define term_light_blue		#0000ff
+#define term_light_magenta	#ff00ff
+#define term_light_cyan		#00ffff
+#define term_light_white	#ffffff
+
+! TODO: Find out how to add urxvt-perls without conflicting with tmux or i3.
+
+! Turn the scrollbars off
+URxvt.scrollBar: false
+
+! Set the geometry of the window.
+! If we do not do this, 80x25 will be used.
+! It probably will not matter in i3. (If it does, turn off this option)
+URxvt.geometry: 96x30
+
+! Start the terminal as a login shell by prepending a hyphen to argv[0].
+! This is helpful for tmux and causes bash login files like ~/.bash_profile to be loaded.
+URxvt*loginShell: true
+
+! Fake transparency.
+! Use this if you do not have a compositor
+! Fake transparency will show the wallpaper at the desktop level, but not any of the windows underneath. You will need real transparency for that.
+! Do not use shading, use fading for transparency.
+! You also cannot use shading if a tintcolor is set.
+! TODO: I have turned this off for the moment.
+! urxvt*transparent: true
+! urxvt*shading:     30
+
+! TODO: Try this later in i3.
+! Real transparency.
+! Use this if you have a compositor or compositing (window) manager.
+! Real transparency will not work if a compositor like Kwin or Compiz is used.
+! If you want real transparency to work, try Xfce or Fluxbox.
+! I am hoping this will work with i3, but let us just get urxvt working before we enable this.
+! urxvt*depth: 32
+! urxvt*background: rgba:0000/0000/0000/c800
+! urxvt*background: [90]#000000
+
+! Fading for unfocused windows
+! You should set this to a low setting or else unfocused windows will be too dark to see.
+! TODO: I have turned this off for the moment.
+! URxvt*fading: 20
+
+! Set borderless to true if you do not want the gui container.
+! You will likely want to preset the location of the window if you do
+! and what application to run (i.e. conkey)
+URxvt*borderLess: false
+
+! Set inheritpixmap to true to use the parent background window pixmap.
+! Basically, use the background image of the parent process.
+! That being the desktop wallpaper.
+! A transparency method should be enabled if you want to use this effectively.
+URxvt*inheritPixmap: true
+
+! To only apply colors to your terminal, for example, prefix the color assignment statement with its name.
+! Example:
+! 	URxvt*background:	term_background
+
+! background and foreground colors
+URxvt*background:		term_background
+URxvt*foreground:		term_foreground
+! URxvt*highlightTextColor:		term_dark_black
+! URxvt*highlightColor:			term_light_white
+
+! Sixteen colors for the terminal.
+*color0:	term_dark_black
+*color1:	term_dark_red
+*color2:	term_dark_green
+*color3:	term_dark_yellow
+*color4:	term_dark_blue
+*color5:	term_dark_magenta
+*color6:	term_dark_cyan
+*color7:	term_dark_white
+*color8:	term_light_black
+*color9:	term_light_red
+*color10:	term_light_green
+*color11:	term_light_yellow
+*color12:	term_light_blue
+*color13:	term_light_magenta
+*color14:	term_light_cyan
+*color15:	term_light_white
+
+! Changing the font
+! TODO: Download Liberation Mono for Powerline. It is different than Liberation mono
+! Using Liberation Mono for Powerline features, if I ever figure out how to use them.
+! They might also be useful for zsh if I ever get interested in that.
+! Things might appear a little bit more wider than usual.
+! To see what fonts are available, run fc-list
+!
+! URxvt*font:		xft:Liberation Mono:size=10
+! URxvt*boldFont:		xft:Liberation Mono:bold:size=10
+! URxvt*italicFont:	xft:Liberation Mono:italic:autohint=true:size=10
+! URxvt*boldItalicFont:	xft:Liberation Mono:bold:italic:autohint=true:size=10
+URxvt*font:		xft:Literation Mono Powerline:size=10
+URxvt*boldFont:		xft:Literation Mono Powerline:bold:size=10
+URxvt*italicFont:	xft:Literation Mono Powerline:italic:autohint=true:size=10
+URxvt*boldItalicFont:	xft:Literation Mono Powerline:bold:italic:autohint=true:size=10
+
+! Decrease the letter spacing by 1 pixel.  This will the appearance of Liberation Mono.
+URxvt.letterSpace: -1
+
+! More Xft stuff
+Xft.dpi: 96
+Xft.antialias: true
+Xft.rgba: rgb
+Xft.hinting: true
+Xft.hintstyle: hintslight
+
+! Xterm
+
+! Colors
+! Sixteen colors for the terminal.
+XTerm*color0:		term_dark_black
+XTerm*color1:		term_dark_red
+XTerm*color2:		term_dark_green
+XTerm*color3:		term_dark_yellow
+XTerm*color4:		term_dark_blue
+XTerm*color5:		term_dark_magenta
+XTerm*color6:		term_dark_cyan
+XTerm*color7:		term_dark_white
+XTerm*color8:		term_light_black
+XTerm*color9:		term_light_red
+XTerm*color10:		term_light_green
+XTerm*color11:		term_light_yellow
+XTerm*color12:		term_light_blue
+XTerm*color13:		term_light_magenta
+XTerm*color14:		term_light_cyan
+XTerm*color15:		term_light_white
+!XTerm*colorBD:		term_bold
+!XTerm*colorIT:		term_italic
+!XTerm*colorUL:		term_underline
+! XTerm colors (The rest of them should apply too)
+XTerm*background:	term_background
+XTerm*foreground:	term_foreground
+!XTerm*cursorColor:	term_foreground
+
+
+! General Settings
+XTerm*termName: xterm-256color
+XTerm*geometry: 96x30
+XTerm*saveLines: 1024
+XTerm*scrollBar: False
+Xterm*loginshell: True
+Xterm*cursorBlink: False
+
+
+! Fonts and Encoding
+XTerm*utf8: True
+XTerm*locale: True
+XTerm*utf8True: True
+XTerm*renderFont: True
+XTerm*preeditType: Root
+XTerm*xftAntialias: true
+XTerm*faceName:	xft:Literation Mono Powerline:size=10
+
+! Let me be clear. It is a case issue.
+xterm*termName: xterm-256color
+xterm*utf8: true
+xterm*locale: true
+xterm*utf8True: true
+xterm*renderFont: true
+xterm*preeditType: root
+xterm*xftAntialias: true
+! Get the Powerline fonts from Github.
+! use fc-list to see a list of fonts
+! xterm*faceName: xft:Hack
+! xterm*faceName: xft:Droid Sans Mono for Powerline
+xterm*faceName: xft:Literation Mono Powerline
+xterm*faceSize: 10
+
+!xterm*faceName:	xft:Literation Mono Powerline:size=10
+!UXTerm*faceName: xft:Literation Mono Powerline
+!UXTerm*faceSize: 10
+
+! Trim trailing spaces
+XTerm*trimSelection: true
+
+! Fix alt-key inputting
+XTerm*eightBitInput: false
+XTerm*metaSendsEscape: true
+! Not sure what that second command will do since there is no windows key on my hacktop
+
+! Copypasta with clipboard
+! TODO: This does not work
+!XTerm*translations:	#override \
+!	Ctrl Shift <KeyPress> C: copy-selection(CLIPBOARD) \n\
+!	Ctrl Shift <KeyPress> V: insert-selection(CLIPBOARD)
+
+! Allow selecting email/url by double-click
+XTerm*charClass: 33:48,37-38:48,45-47:48,64:48,58:48,126:48,61:48,63:48,43:48,35:48
+
+

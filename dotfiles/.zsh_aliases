@@ -1,0 +1,9 @@
+# File: ~/.zsh_aliases
+# Info: Aliases that are for the ZSH shell.
+# 	You may want to copypasta from ~/.bash_aliases
+
+# List plugged in block devices reguardless if they are mounted or not.
+alias lsdev="sudo fdisk -l | sed -n -e '/^\/dev\/*/p'"
+
+# diff -W $(tput cols) -y $1 $2
+# | less -eFMXR
